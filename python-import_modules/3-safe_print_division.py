@@ -11,6 +11,5 @@ def safe_print_division(a, b):
         return None
     else:
         print("Inside result: {}".format(result))
-        return result
     finally:
-        print("Finally: Division completed.")
+        return result
