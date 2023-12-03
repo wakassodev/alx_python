@@ -2,6 +2,6 @@
 
 if __name__ == "__main__":
     '''Simple variable'''
-    from variable_load_5 import a
+    from variable_load_2 import a
     variable = a
     print("{}".format(variable))
