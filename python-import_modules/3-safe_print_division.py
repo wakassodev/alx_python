@@ -1,10 +1,21 @@
 #!/usr/bin/python3
 
-def raise_exception():
-    raise TypeError("Type exception")
+def safe_print_division(a, b):
+    try:
+        result = a / b
+    except ZeroDivisionError:
+        result = None
+    finally:
+        print("Inside result: {}".format(result))
+        return result
 
 if __name__ == "__main__":
-    try:
-        raise_exception()
-    except TypeError as te:
-        print("Exception raised")
+    a = 12
+    b = 2
+    result = safe_print_division(a, b)
+    print("{:d} / {:d} = {}".format(a, b, result))
+
+    a = 12
+    b = 0
+    result = safe_print_division(a, b)
+    print("{:d} / {:d} = {}".format(a, b, result))

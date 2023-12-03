@@ -1,7 +1,10 @@
 #!/usr/bin/python3
 
 def raise_exception():
+    raise TypeError("Type exception")
+
+if __name__ == "__main__":
     try:
-        raise TypeError("This is a custom type exception.")
-    except TypeError as e:
-        print(f"Caught an exception: {e}")
+        raise_exception()
+    except TypeError as te:
+        print("Exception raised")
