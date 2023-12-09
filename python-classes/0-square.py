@@ -1,9 +1,8 @@
 #!/usr/bin/python3
 
+"""This class defines a square."""
 class Square:
     """
-    This class defines a square.
-
     Attributes:
         __size (int): Private instance attribute representing the size of the square.
     """
