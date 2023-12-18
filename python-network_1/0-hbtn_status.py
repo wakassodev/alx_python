@@ -4,11 +4,11 @@
 """
 from urllib import requests
 
+"""
+- fetches https://alx-intranet.hbtn.io/status.
+"""
 if __name__ == '__main__':
     
-    """
-    - fetches https://alx-intranet.hbtn.io/status.
-    """
     with requests.urlopen('https://alx-intranet.hbtn.io/status') as res:
         content = res.read()
         print("Body response:")
