@@ -6,11 +6,12 @@
 """
 
 import sys
-from urllib import request, error
+import requests
 
 if __name__ == "__main__":
     try:
-        with request.urlopen(sys.argv[1]) as res:
-            print(res.read().decode('UTF-8'))
-    except error.HTTPError as er:
-        print('Error code:', er.code)
+        response = requests.get(sys.argv[1])
+        response.raise_for_status()  # Raises HTTPError for bad responses
+        print(response.text)
+    except requests.exceptions.HTTPError as er:
+        print('Error code:', er.response.status_code)
