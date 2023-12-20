@@ -11,7 +11,7 @@ import requests
 if __name__ == "__main__":
     try:
         response = requests.get(sys.argv[1])
-        response.raise_for_status()  # Raises HTTPError for bad responses
+        response.raise_for_status()
         print(response.text)
     except requests.exceptions.HTTPError as er:
         print('Error code:', er.response.status_code)
