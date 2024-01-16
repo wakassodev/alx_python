@@ -19,11 +19,12 @@ if __name__ == "__main__":
                            .format(sys.argv[1], sys.argv[2], sys.argv[3]),
                            pool_pre_ping=True)
 
-    # # Create a session to interact with the database
-    # Session = sessionmaker(bind=engine)
-    # session = Session()
+    # Create a session to interact with the database
+    Session = sessionmaker(bind=engine)
+    session = Session()
 
-    # # Query and display State objects
-    # states = session.query(State).order_by(State.id).all()
-    # for state in states:
-    #     print("{}: {}".format(state.id, state.name))
+    # Query and display State objects
+    states = session.query(State).order_by(State.id).all()
+    for state in states:
+        print("{}: {}".format(state.id, state.name))
+    session.close()
